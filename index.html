@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <nav>
+    <div class="main-logo"> </i>
+      <h1>DSA GeekSheet</h1>
+      <img src="" alt="" srcset="">
+      <button id="open-btn"> <i class="fa-solid fa-bars"></i></button>
+      <button id="close-btn"> <i class="fa-solid fa-xmark"></i></i></button>
+    </div>
+
+    <div class="search-box">
+      <form>
+        <input type="text" name="search" id="search" placeholder="Search for Question..." class="search-bar">
+
+      </form>
+    </div>
+
+    <div class="features">
+      <div class="bookmark-box">
+        <button class="bookmark-box-btn"> <img src="images/book.svg" alt="" srcset="" class="book-svg">Bookmark</button>
+      </div>
+      <div class="dark-mode-btn">
+        <div class="toggle"></div>
+      </div>
+    </div>
+
+
+  </nav>
+  <div class="container">
+
+    <div class="headtitle">
+
+
+      <div class="search-box">
+
+      </div>
+    </div>
+    <div id="output"></div>
+    <div class="progress-bar-des">
+
+
+      <div class="status-info">
+        <h1 class="title">Your progress</h1>
+        <div class="bar-wrap">
+          <div class="bar" id="myBar"></div>
+        </div>
+        <span class="percentage"></span>
+        <div class="que-comp">
+          <p>Number of Question Completed: <span class="number" id="num1">0</span></p>
+          <p>Total Question: <span class="number" id="num2">0</span></p>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+    <!-- <button id="darkmode" value="Switch to Dark"> Switch to Dark</button> -->
+  </div>
+
+  <div id="output">
+  </div>
+
+  <div id="acc-wrapper">
+
+
+  </div>
+
+
+  <script src="script.js" async defer></script>
+  <script src="bookmark.js" async defer></script>
+</body>
+
+</html>
