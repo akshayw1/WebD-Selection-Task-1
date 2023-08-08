@@ -108,7 +108,7 @@ function getData() {
 
       // end accordion
 
-      // Storing checkboxes
+     
 
       let checkstored = JSON.parse(localStorage.getItem("checkstored")) || {};
 
@@ -123,7 +123,7 @@ function getData() {
         barWidth.style.width = `${progressWidth}%`;
       }
 
-      // for background greeen color
+      // for backgorund color after reload and uodate progress bar
 
       checkboxes.forEach((checkbox) => {
         const row = checkbox.closest(".question-row");
@@ -143,6 +143,8 @@ function getData() {
 
       document.getElementById("num1").innerText = countcourse;
 
+
+      // add backgriund color green
       checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", () => {
           const row = checkbox.closest(".question-row");
@@ -154,7 +156,8 @@ function getData() {
             row.classList.remove("green-background");
             countcourse--;
           }
-
+          
+          // Storing checkboxes
           const checkstored = {};
           checkboxes.forEach((cb) => {
             const checkboxId = cb.getAttribute("id");
@@ -253,6 +256,7 @@ function getData() {
 
 getData();
 
+
 function getBook() {
   fetch("https://test-data-gules.vercel.app/data.json")
     .then((res) => res.json())
@@ -261,14 +265,17 @@ function getBook() {
         const bookQue = JSON.parse(localStorage.getItem("bookQue")) || [];
         if (!bookQue.includes(questionId)) {
           bookQue.push(questionId);
+          alert("Bookmark Added")
           localStorage.setItem("bookQue", JSON.stringify(bookQue));
 
-          // Display bookmark in book sec
+          // Display bookmark in book section
           const bookList = document.getElementById("bookmarked-questions-list");
+          const bookoutput = document.getElementById("bookoutput");
 
           data.data.forEach((category) => {
             category.ques.forEach((question) => {
               if (bookQue.includes(question.id)) {
+                console.log(category.ques)
                 const row = document.createElement("tr");
                 row.innerHTML = `
             <td>${question.title}</td>
@@ -283,15 +290,18 @@ function getBook() {
               }
             });
           });
+        }else{
+          alert("Already Added")
         }
       }
 
       const bookmarkButtons = document.querySelectorAll(".book-btn");
-      bookmarkButtons.forEach((button) => {
-        button.addEventListener("click", (e) => {
-          const questionId = e.target.id;
+      bookmarkButtons.forEach((buttons) => {
+        buttons.addEventListener("click",(e) => {
+          const questionId =e.target.parentElement.id;
           console.log(questionId);
-          alert("Booked this Que to review later");
+          
+         
 
           bookmarkQuestion(questionId);
         });
@@ -300,11 +310,13 @@ function getBook() {
       // Display bookmark questions on page load
       const bookQue = JSON.parse(localStorage.getItem("bookQue")) || [];
       const bookList = document.getElementById("bookmarked-questions-list");
+      
       data.data.forEach((category) => {
         category.ques.forEach((question) => {
           if (bookQue.includes(question.id)) {
-            // console.log(question.title);
+            console.log(question.title);
             const row = document.createElement("tr");
+            row.classList.add("question-row")
             row.innerHTML = `
             
           
@@ -339,6 +351,10 @@ function getBook() {
 }
 
 getBook();
+
+
+
+
 
 // dark mode implemented
 

@@ -10,15 +10,6 @@ font-family: 'Raleway', sans-serif; */
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Montserrat:wght@600&display=swap');
 
-
-:root {
-  
-  
-  --bar-color: #38b000;
-  --body-color: #222;
-  --text-color: white;
-  --bar-wrap-back-color: white;
-}
 body {
   font-family: "Josefin Sans", sans-serif;
   background-color: #1f2641;
@@ -54,6 +45,10 @@ nav{
   position: sticky;
   z-index: 5;
   
+}
+
+.book-table td{
+  color: white;
 }
 
 
@@ -103,6 +98,10 @@ nav{
   /* color: #ffffff; */
   align-items: center;
   display: flex;
+}
+
+.main-logo img{
+  height: 50px;
 }
 .features{
   display: flex;
@@ -235,7 +234,6 @@ svg{
   font-size: 1.3rem;
   border-radius: 1rem;
 
-  width: 80%;
   background-color:#e7f2fd ;
 }
 
